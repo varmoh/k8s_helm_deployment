@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <h1>Byrokratt helm deployment</h1>
+
+    <form id="configForm" enctype="multipart/form-data">
+        <label for="configFile">Select Configuration File:</label>
+        <input type="file" id="configFile" name="configFile" required>
+        <button type="button" onclick="loadConfig()">Load Config</button>
+    </form>
+    
+    <form id="deployForm" enctype="multipart/form-data">
+        <h2>Select Releases to Deploy:</h2>
+        <div id="releases"></div>
+        <input type="checkbox" id="deployAll" name="deployAll">
+        <label for="deployAll">Deploy All Releases</label><br>
+        <button type="button" onclick="deploy()">Deploy</button>
+    </form>
+
+    <h2>Logs:</h2>
+    <div id="logContainer"></div>
+
+    <div id="message" class="status-message"></div>
+        <!-- Footer -->
+        <footer>
+            <p>Made by varmoh</p>
+        </footer>
+</body>
+</html>
