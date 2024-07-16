@@ -8,5 +8,5 @@ python helm.py config.json
 ```
 
 ```
-python helm.py config.json component-databases
+python helm.py config.json <name of single instance you deploy>
 ```
