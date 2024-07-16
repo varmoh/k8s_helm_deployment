@@ -10,3 +10,15 @@ python helm.py config.json
 ```
 python helm.py config.json <name of single instance you deploy>
 ```
+
+### Run using frontend
+
+```
+python3 app.py
+```
+
+Access it with
+
+```
+localhost:5000
+```
