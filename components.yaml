@@ -1,0 +1,6 @@
+# Change values accordingly.
+deployments:
+  - name: component-
+    chart_path: / # Path to values.yaml
+    namespace: test3 # Yourn namespace
+
