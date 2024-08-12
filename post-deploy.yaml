@@ -1,20 +1,5 @@
 # Change values accordingly.
 deployments:
-  - name: post-deploy-first-login
-    chart_path: ./Post-deploy/first-login
-    namespace: test3
-
-deployments:
-  - name: post-deploy-pipeline
-    chart_path: ./Post-deploy/pipeline
-    namespace: test3
-
-deployments:
-  - name: post-deploy-pipelie-seed
-    chart_path: ./Post-deploy/pipeline-seed
-    namespace: test3
-
-deployments:
-  - name: post-deploy-common-service
-    chart_path: ./Post-deploy/common
+  - name: test
+    chart_path: ./
     namespace: test3

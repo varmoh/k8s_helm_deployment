@@ -1,30 +1,8 @@
 # Change values accordingly.
 deployments:
-  - name: modules-byk-widget
-    chart_path: ./Modules/Widget
+  - name: test
+    chart_path: ./
     namespace: test3
-
-deployments:
-  - name: modules-byk-authentication-layer
-    chart_path: ./Modules/Authentication-Layer
-    namespace: test3
-
-deployments:
-  - name: modules-byk-backoffice-gui
-    chart_path: ./Modules/Buerokratt-Chatbot
-    namespace: test3
-
-deployments:
-  - name: modules-byk-analytics-gui
-    chart_path: ./Modules/Analytics-Module
-    namespace: test3
-
-deployments:
-  - name: modules-byk-training-module-gui
-    chart_path: ./Modules/Training-Module
-    namespace: test3
-
-deployments:
-  - name: modules-byk-service-gui
-    chart_path: ./Modules/Service-Module
+  - name: test2
+    chart_path: ./
     namespace: test3

@@ -11,11 +11,35 @@ def run_helm_command(command):
         print(f"An error occurred while running Helm: {e}")
         sys.exit(1)
 
+def check_and_create_namespace(namespace):
+    """Check if a Kubernetes namespace exists, and create it if it doesn't."""
+    try:
+        # Check if namespace exists
+        result = subprocess.run(
+            ['kubectl', 'get', 'namespace', namespace],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        )
+
+        if result.returncode != 0:
+            print(f"Namespace '{namespace}' does not exist. Creating it...")
+            # Create the namespace
+            subprocess.run(['kubectl', 'create', 'namespace', namespace], check=True)
+            print(f"Namespace '{namespace}' created successfully.")
+        else:
+            print(f"Namespace '{namespace}' already exists.")
+
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred while checking or creating the namespace: {e}")
+        sys.exit(1)
+
 def deploy(deployment):
     """Deploy using Helm based on the deployment configuration."""
     name = deployment['name']
     chart_path = deployment['chart_path']
     namespace = deployment['namespace']
+
+    # Check and create namespace if it does not exist
+    check_and_create_namespace(namespace)
 
     command = [
         'helm', 'upgrade', '--install', name, chart_path,
