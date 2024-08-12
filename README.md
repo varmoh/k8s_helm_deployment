@@ -29,17 +29,17 @@ To deploy all, run
 python3 deploy.py components.yaml
 ```
 
-This will deploy all components in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml
+This will deploy all components in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
 
 
 To deploy only certain components or modules add the release name
 
 ```
-python3 deploy.py components.yaml component-byk-ruuter
+python3 deploy.py components.yaml component-test
 ```
 or
 ```
-python3 deploy.py modules.yaml module-byk-backofice-gui
+python3 deploy.py modules.yaml module-test
 ```
 
 
@@ -62,7 +62,7 @@ python3 uninstall.py components.yaml
 This will delete all components in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
 
 ```
-python3 uninstall.py components.yaml component-byk-ruuter
+python3 uninstall.py components.yaml component-test
 ```
 
 This will delete one component in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
@@ -70,12 +70,12 @@ This will delete one component in a namespace described in `components.yaml`. Sa
 Note: You can add as many components/modules etc as you need to uninstall.
 
 ```
-python3 uninstall.py components.yaml component-byk-ruuter component-byk-resql component-byk-tim
+python3 uninstall.py components.yaml component-test component-test2 component-testX
 ```
 
 
 #### Things to look out for
-While inside the components.yaml, modules.yaml and post-deploy.yaml deployments are in order, be noted, that `component-databases` should always be a first one to be deployed.
+While inside the components.yaml, modules.yaml and post-deploy.yaml deployments are in order, be noted, that `component that controls Postgres databases` should always be a first one to be deployed.
 
 When updating the info inside components.yaml, modules.yaml, post-deploy.yaml follow the yaml structure very strictly.  
 for example:
@@ -91,4 +91,4 @@ deployments:
 ```
 
 ## Current issues
-Deployment script does not have yet a check, that would give `component-databases` and `component-opensearch-node` ample time to start up. Working on it.
+Deployment script does not have yet a check, that would give `databases` and `opensearch` ample time to start up. Working on it.
