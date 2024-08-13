@@ -46,13 +46,14 @@ def load_yaml(file_path):
             print(f"Error reading the file {file_path}: {e}")
             sys.exit(1)
 
-def find_values_files(base_dir):
-    """Find all values.yaml files under the base directory."""
+def find_values_files(directories):
+    """Find all values.yaml files under the given list of directories."""
     values_files = []
-    for root, dirs, files in os.walk(base_dir):
-        for file in files:
-            if file == "values.yaml":
-                values_files.append(os.path.join(root, file))
+    for base_dir in directories:
+        for root, dirs, files in os.walk(base_dir):
+            for file in files:
+                if file == "values.yaml":
+                    values_files.append(os.path.join(root, file))
     return values_files
 
 def main():
@@ -63,8 +64,10 @@ def main():
     passwords_file = sys.argv[1]
     passwords = load_yaml(passwords_file)
 
-    # Look for values.yaml files under the Components directory
-    values_files = find_values_files("./Components")
+    # Directories to check for values.yaml files
+    directories = ["./Components", "./Modules", "./Post-deploy"]
+
+    values_files = find_values_files(directories)
 
     any_changes = False
 

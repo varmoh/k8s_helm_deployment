@@ -1,8 +1,0 @@
-scan_directory: "./" # Path to where your helm values.yaml's are located
-files:
-  - file_pattern: "values.yaml"  # Files to search for in the scan_directory
-    replacements:
-      - old_text: "old"
-        new_text: "new"
-      - old_text: "Test123"
-        new_text: "Aok098"

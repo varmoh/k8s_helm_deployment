@@ -14,15 +14,17 @@ This script can be used in general also to install libraries quickly and keep ey
 
 Use `requirements.json` for adding the libraries you need to install.
 
-##### Preparations 
+#### Preparations 
 
-##### Changes to values.yaml - (to be updated - moved to ./helpers) 
+#### Changing `secrets`
 
-To change paramaters (domains etc.) in values.yaml 's  
+Modify the secrets.yaml to give values to your secrets in values.yaml files.  
+Run the script  
 
-Apply changes inside `changes.yaml`  
+```
+python3 secrets.py secrets.yaml
+```
 
-Run `update_values.py`   
 
 ##### Password (sensitive info) changes
 
