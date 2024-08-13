@@ -14,12 +14,24 @@ This script can be used in general also to install libraries quickly and keep ey
 
 Use `requirements.json` for adding the libraries you need to install.
 
-##### Preparations  
-To change paramaters (domains, passwords etc.) in values.yaml 's  
+##### Preparations 
+
+##### Changes to values.yaml - (to be updated - moved to ./helpers) 
+
+To change paramaters (domains etc.) in values.yaml 's  
 
 Apply changes inside `changes.yaml`  
 
 Run `update_values.py`   
+
+##### Password (sensitive info) changes
+
+Edit the `passwords.yaml` to give correct info  
+Run the script
+
+```
+python3 password_change.py passwords.yaml
+```
 
 
 ##### Deployment
