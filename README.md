@@ -1,7 +1,19 @@
 # This is a temporary branch for testing a Buerokratt helm deployment
 NOTE:   
-modules.yaml, components.yaml and post-deploy.yaml have currently paths set up for testing purposes and do not reflect actual structure until pipeline moves to No-Ops
+`modules.yaml`, `components.yaml` and `post-deploy.yaml` have currently paths set up for testing purposes and do not reflect actual structure until deployment pipeline moves to No-Ops
 
+#### How to run as a test 
+
+Requirement:  
+To run it on your local K8s cluster, a simple `minikube` is sufficent, you can find how to run it here:  
+https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
+
+To run Buerokratt deployment in a local test environment, first clone the repo:
+
+```
+python3 git_clone.py git.yaml
+```
+You have now cloned Buerokratt helm charts, continue with testing the deployment pipeline(s)
 ## Helm installation using python 
 
 
