@@ -5,7 +5,7 @@
 
 #### Cluster requirements
 For successful installation, cluster must have  
- - CertManager (not neded for local testing)
+ - CertManager (not needed for local testing)
  - Istio 
  - Longhorn
 
