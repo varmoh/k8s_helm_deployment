@@ -1,6 +1,15 @@
-### How to use
+## Helm installation using python 
 
- Requirements  
+
+### Requirements  
+
+#### Cluster requirements
+For successful installation, cluster must have  
+ - CertManager (not neded for local testing)
+ - Istio 
+ - Longhorn
+
+#### Python requirements  
 
 `Python3, pip`  
 
