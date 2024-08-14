@@ -4,10 +4,45 @@ NOTE:
 
 #### How to run as a test 
 
-Requirement:  
+Requirements:  
+
+#### Minikube
 To run it on your local K8s cluster, a simple `minikube` is sufficent, you can find how to run it here:  
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
 
+To install ` kubectl`
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
+```
+chmod +x kubectl
+```
+```
+sudo mv kubectl /usr/local/bin/
+```
+
+To install `helm`
+
+```
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
+To install `longhorn`  
+```
+helm repo add longhorn https://charts.longhorn.io
+```
+```
+helm repo update
+```
+```
+kubectl create namespace longhorn-system
+```
+```
+helm install longhorn longhorn/longhorn --namespace longhorn-system
+```
+
+#### Cloning the repo
 To run Buerokratt deployment in a local test environment, first clone the repo:
 
 ```
