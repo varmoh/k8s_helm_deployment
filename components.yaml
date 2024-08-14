@@ -1,6 +1,57 @@
 # Change values accordingly.
 deployments:
-  - name: component-
-    chart_path: / # Path to values.yaml
-    namespace: test3 # Yourn namespace
+  - name: component-databases
+    chart_path: ./NoOps/Kubernetes/Components/Databases
+    namespace: test3
 
+  - name: component-byk-ruuter
+    chart_path: ./NoOps/Kubernetes/Components/Ruuter
+    namespace: test6
+
+  - name: component-byk-ruuter-private
+    chart_path: ./NoOps/Kubernetes/Components/Private-Ruuter
+    namespace: test3
+
+  - name: component-byk-tim
+    chart_path: ./NoOps/Kubernetes/Components/Tim
+    namespace: test3
+
+  - name: component-byk-resql
+    chart_path: ./NoOps/Kubernetes/Components/Resql
+    namespace: test3
+
+  - name: component-byk-dmapper
+    chart_path: ./NoOps/Kubernetes/Components/DataMapper
+    namespace: test3
+
+  - name: component-opensearch-node
+    chart_path: ./NoOps/Kubernetes/Components/Opensearch
+    namespace: test3
+
+  - name: component-byk-trainbot
+    chart_path: ./NoOps/Kubernetes/Components/Train-bot
+    namespace: test3
+
+  - name: component-byk-bot
+    chart_path: ./NoOps/Kubernetes/Components/Bot
+    namespace: test3
+
+  - name: component-byk-cronmanager
+    chart_path: ./NoOps/Kubernetes/Components/CronManager
+    namespace: test3
+
+  - name: component-byk-s3ferry
+    chart_path: ./NoOps/Kubernetes/Components/s3Ferry
+    namespace: test3
+
+  - name: component-byk-s3ferry-publish
+    chart_path: ./NoOps/Kubernetes/Components/s3ferry-publish
+    namespace: test3
+
+  - name: component-byk-notificationns-node
+    chart_path: ./NoOps/Kubernetes/Components/Notifications
+    namespace: test3
+
+  - name: component-byk-xtr
+    chart_path: ./NoOps/Kubernetes/Components/Notifications
+    namespace: test3

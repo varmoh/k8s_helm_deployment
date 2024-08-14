@@ -1,3 +1,7 @@
+# This is a temporary branch for testing a Buerokratt helm deployment
+NOTE:   
+modules.yaml, components.yaml and post-deploy.yaml have currently paths set up for testing purposes and do not reflect actual structure until pipeline moves to No-Ops
+
 ## Helm installation using python 
 
 

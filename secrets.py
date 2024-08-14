@@ -65,7 +65,7 @@ def main():
     passwords = load_yaml(passwords_file)
 
     # Directories to check for values.yaml files
-    directories = ["./Components", "./Modules", "./Post-deploy"]
+    directories = ["./NoOps/Kubernetes/Components", "./NoOps/Kubernetes/Modules", "./NoOps/Kubernetes/Post-deploy"]
 
     values_files = find_values_files(directories)
 

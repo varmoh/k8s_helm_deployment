@@ -1,8 +1,25 @@
 # Change values accordingly.
 deployments:
-  - name: test
-    chart_path: ./
+  - name: module-byk-widget
+    chart_path: ./NoOps/Kubernetes/Modules/Widget
     namespace: test3
-  - name: test2
-    chart_path: ./
+
+  - name: module-byk-authentication-layer
+    chart_path: ./NoOps/Kubernetes/Modules/Authentication-Layer
+    namespace: test3
+
+  - name: module-byk-backoffice-gui
+    chart_path: ./NoOps/Kubernetes/Modules/Buerokratt-Chatbot
+    namespace: test3
+
+  - name: module-byk-analytics-gui
+    chart_path: ./NoOps/Kubernetes/Modules/Analytics-Module
+    namespace: test3
+
+  - name: module-byk-training-module-gui
+    chart_path: ./NoOps/Kubernetes/Modules/Training-Module
+    namespace: test3
+
+  - name: module-byk-service-gui
+    chart_path: ./NoOps/Kubernetes/Modules/Service-Module
     namespace: test3
