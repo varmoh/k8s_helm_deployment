@@ -28,7 +28,7 @@ To install `helm` (this is optional if it not there by default)
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
-To install `iscsi`
+To install `iscsi` (not optional without this longhorn will fail)
 ```
 minikube ssh
 ```
