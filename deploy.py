@@ -37,12 +37,12 @@ def interactive_delay(duration):
     
     countdown_messages = [
         "Two minutes is a long time... Go get some coffee",
-        "Still waiting... Patience is a virtue you know.",
-        "Almost there! Hope you're as excited as me!",
+        "Patience is a virtue you know.",
+        "Almost...there...",
         "Final seconds... lets hope it wont go KABOOM"
     ]
     
-    interval = 30  # Update every 30 seconds
+    interval = 15  # Update every 15 seconds
     for i in range(0, duration, interval):
         remaining = duration - i
         print(f"{remaining} seconds remaining... {countdown_messages[i // interval]}")
@@ -73,10 +73,10 @@ def deploy(deployment):
     run_helm_command(command)
     print(f"Deployment {name} completed successfully.\n")
 
-    # Introduce a 2-minute delay after deploying 'component-databases'
+    # Introduce a 1-minute delay after deploying 'component-databases'
     if name == 'component-databases':
-        print("Waiting for 2 minutes before proceeding with the next deployment...")
-        interactive_delay(120)  # Wait for 120 seconds interactively
+        print("Waiting for a minute before proceeding with the next deployment...")
+        interactive_delay(60)  # Wait for 60 seconds interactively
 
 def load_config(config_file):
     """Load deployments configuration from a YAML file."""

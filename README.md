@@ -172,6 +172,4 @@ deployments:
 ```
 
 ## Current issues
-Deployment script does not have yet a check, that would give `databases` ample time to start up, current workaround is, that run
-`python3 deploy.sh components.yaml component-databases` wait 2 minutes and then continue with the rest.
-Working on automatic solution for this.
+Currently no issues. If you find any, let me know.
