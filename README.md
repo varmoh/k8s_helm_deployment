@@ -1,12 +1,10 @@
 # This is a temporary branch for testing a Buerokratt helm deployment
-NOTE:   
-`modules.yaml`, `components.yaml` and `post-deploy.yaml` have currently paths set up for testing purposes and do not reflect actual structure until deployment pipeline moves to No-Ops
 
-#### How to run as a test 
+### How to run as a test 
 
-Requirements:  
+#### Requirements:  
 
-#### Minikube
+#### Minikube requirements
 To run it on your local K8s cluster, a simple `minikube` is sufficent, you can find how to run it here:  
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
 
@@ -55,8 +53,27 @@ kubectl create namespace longhorn-system
 ```
 helm install longhorn longhorn/longhorn --namespace longhorn-system
 ```
+#### Python requirements  
 
-#### Cloning the repo
+`Python3, pip`  
+
+Needed libraries:  
+
+`pyyaml`  
+Consult [this part](#Python-libraries) of readme, if you need to install libraries
+
+
+## IMPORTANT  
+To run this test, clone this repo:  
+```
+git clone https://github.com/varmoh/k8s_helm_deployment.git
+```
+then  
+```
+cd k8s_helm_deployment
+```
+
+#### Cloning the  `No-Ops` repo
 To run Buerokratt deployment in a local test environment, first clone the repo:
 
 ```
@@ -66,21 +83,7 @@ You have now cloned Buerokratt helm charts, continue with testing the deployment
 ## Helm installation using python 
 
 
-### Requirements  
-
-#### Cluster requirements
-For successful installation, cluster must have  
- - CertManager (not needed for local testing)
- - Istio       
- - Longhorn
-
-#### Python requirements  
-
-`Python3, pip`  
-
-Needed libraries:  
-
-`pyyaml`  
+#### Python libraries  
 
 To install use `libraries/install_libraries.py`   
 
