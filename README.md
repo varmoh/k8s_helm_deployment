@@ -113,14 +113,16 @@ python3 deploy.py components.yaml
 This will deploy all components in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
 
 
-To deploy only certain components or modules add the release name
+To deploy only certain components or modules add the release name, 
+
+example:
 
 ```
-python3 deploy.py components.yaml component-test
+python3 deploy.py components.yaml component-byk-ruuter
 ```
 or
 ```
-python3 deploy.py modules.yaml module-test
+python3 deploy.py modules.yaml module-byk-widget
 ```
 
 
@@ -143,7 +145,7 @@ python3 uninstall.py components.yaml
 This will delete all components in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
 
 ```
-python3 uninstall.py components.yaml component-test
+python3 uninstall.py components.yaml component-byk-ruuter
 ```
 
 This will delete one component in a namespace described in `components.yaml`. Same logic goes also with `modules.yaml` and `post-deploy.yaml`
@@ -151,12 +153,11 @@ This will delete one component in a namespace described in `components.yaml`. Sa
 Note: You can add as many components/modules etc as you need to uninstall.
 
 ```
-python3 uninstall.py components.yaml component-test component-test2 component-testX
+python3 uninstall.py components.yaml component-byk-ruuter component-byk-resql component-byk-xtr
 ```
 
 
 #### Things to look out for
-While inside the components.yaml, modules.yaml and post-deploy.yaml deployments are in order, be noted, that `component that controls Postgres databases` should always be a first one to be deployed.
 
 When updating the info inside components.yaml, modules.yaml, post-deploy.yaml follow the yaml structure very strictly.  
 for example:
