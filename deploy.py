@@ -2,6 +2,7 @@ import subprocess
 import yaml
 import sys
 import os
+import time
 
 def run_helm_command(command):
     """Run a Helm command and handle errors."""
@@ -32,6 +33,23 @@ def check_and_create_namespace(namespace):
         print(f"An error occurred while checking or creating the namespace: {e}")
         sys.exit(1)
 
+def interactive_delay(duration):
+    
+    countdown_messages = [
+        "Two minutes is a long time... Go get some coffee",
+        "Still waiting... Patience is a virtue you know.",
+        "Almost there! Hope you're as excited as me!",
+        "Final seconds... lets hope it wont go KABOOM"
+    ]
+    
+    interval = 30  # Update every 30 seconds
+    for i in range(0, duration, interval):
+        remaining = duration - i
+        print(f"{remaining} seconds remaining... {countdown_messages[i // interval]}")
+        time.sleep(interval)
+    
+    print("Time's up! Proceeding with the next deployment...")
+
 def deploy(deployment):
     """Deploy using Helm based on the deployment configuration."""
     name = deployment['name']
@@ -54,6 +72,11 @@ def deploy(deployment):
     print(f"Deploying {name} to {namespace} namespace...")
     run_helm_command(command)
     print(f"Deployment {name} completed successfully.\n")
+
+    # Introduce a 2-minute delay after deploying 'component-databases'
+    if name == 'component-databases':
+        print("Waiting for 2 minutes before proceeding with the next deployment...")
+        interactive_delay(120)  # Wait for 120 seconds interactively
 
 def load_config(config_file):
     """Load deployments configuration from a YAML file."""

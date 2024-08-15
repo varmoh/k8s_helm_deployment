@@ -10,7 +10,7 @@ Requirements:
 To run it on your local K8s cluster, a simple `minikube` is sufficent, you can find how to run it here:  
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
 
-To install ` kubectl` this is optional if it not there by default)
+To install ` kubectl` (this is optional if it not there by default)
 
 ```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -71,7 +71,7 @@ You have now cloned Buerokratt helm charts, continue with testing the deployment
 #### Cluster requirements
 For successful installation, cluster must have  
  - CertManager (not needed for local testing)
- - Istio 
+ - Istio       
  - Longhorn
 
 #### Python requirements  
@@ -83,6 +83,10 @@ Needed libraries:
 `pyyaml`  
 
 To install use `libraries/install_libraries.py`   
+
+```
+python3 libraries/install_libraries.py requirements.json
+```
 
 This script can be used in general also to install libraries quickly and keep eye on, what has been installed.  
 
@@ -98,17 +102,6 @@ Run the script
 ```
 python3 secrets.py secrets.yaml
 ```
-
-
-##### Password (sensitive info) changes
-
-Edit the `passwords.yaml` to give correct info  
-Run the script
-
-```
-python3 password_change.py passwords.yaml
-```
-
 
 ##### Deployment
 To deploy all, run 
@@ -179,4 +172,6 @@ deployments:
 ```
 
 ## Current issues
-Deployment script does not have yet a check, that would give `databases` and `opensearch` ample time to start up. Working on it.
+Deployment script does not have yet a check, that would give `databases` ample time to start up, current workaround is, that run
+`python3 deploy.sh components.yaml component-databases` wait 2 minutes and then continue with the rest.
+Working on automatic solution for this.
