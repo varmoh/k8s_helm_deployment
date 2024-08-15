@@ -60,6 +60,7 @@ helm install longhorn longhorn/longhorn --namespace longhorn-system
 Needed libraries:  
 
 `pyyaml`  
+
 Consult [this part](#Python-libraries) of readme, if you need to install libraries
 
 
@@ -74,7 +75,7 @@ cd k8s_helm_deployment
 ```
 
 #### Cloning the  `No-Ops` repo
-To run Buerokratt deployment in a local test environment, first clone the repo:
+To run Buerokratt deployment clone the `No-Ops` repo where the Helm charts are:
 
 ```
 python3 git_clone.py git.yaml
