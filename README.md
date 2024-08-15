@@ -8,7 +8,7 @@
 To run it on your local K8s cluster, a simple `minikube` is sufficent, you can find how to run it here:  
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download
 
-To install ` kubectl` (this is optional if it not there by default)
+To install ` kubectl` (this is optional if it is not there by default)
 
 ```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -20,13 +20,13 @@ chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 ```
 
-To install `helm` (this is optional if it not there by default)
+To install `helm` (this is optional if it is not there by default)
 
 ```
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
 
-To install `iscsi` (not optional without this longhorn will fail)
+To install `iscsi` (not optional, without this longhorn will fail)
 ```
 minikube ssh
 ```
@@ -180,5 +180,5 @@ deployments:
 Currently no issues. If you find any, let me know.
 
 ## To do
- - Separating variabls into two files,for current test they are in one but they should be 2 different "configure" files
+ - Separating variables into two files,for current test they are in one but they should be 2 different "configure" files
  - Add a possibility to use 2 config files within one deploy, currently script supports one config file at a time
